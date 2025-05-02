@@ -6,14 +6,22 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSettings[] audioSettings;
     [SerializeField] private AudioSource ChannelMusic;
-    
- 
+    private static AudioManager Instance;
+
 
     private float[] _savedVolumes;
     private int _dataLength;
 
     private void Awake()
     {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
         _dataLength = audioSettings.Length;
 
         _savedVolumes = new float[_dataLength];

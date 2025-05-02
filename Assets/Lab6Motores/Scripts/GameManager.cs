@@ -30,4 +30,6 @@ public class GameManager : MonoBehaviour
         fadeSequence.AppendInterval(0.1f);
         fadeSequence.Append(image.DOFade(0f, durationFade));
     }
+
+
 }
