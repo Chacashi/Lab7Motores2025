@@ -27,14 +27,14 @@ public class AudioManager : MonoBehaviour
         }
 
 
-        InteractableObject.OnPlayNewMusic += StopAudio;
-        InteractableObject.OnExitCollisionMusic += PlayAudio;
+        InteractableObject.OnPlayerEnterObject += StopAudio;
+        InteractableObject.OnPlayerExitObject += PlayAudio;
     }
 
     private void OnDisable()
     {
-        InteractableObject.OnPlayNewMusic -= StopAudio;
-        InteractableObject.OnExitCollisionMusic -= PlayAudio;
+        InteractableObject.OnPlayerEnterObject -= StopAudio;
+        InteractableObject.OnPlayerExitObject -= PlayAudio;
     }
 
     public void RevertChanges()

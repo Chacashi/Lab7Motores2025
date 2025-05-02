@@ -10,16 +10,16 @@ public class AudioPlayer : MonoBehaviour
     private void OnEnable()
     {
         InteractableObject.OnCollisionMusic += PlayPlayer;
-        InteractableObject.OnPlayNewMusic += PlayOneshoot;
-        InteractableObject.OnExitCollisionMusic += PlayOneshoot;
+        InteractableObject.OnPlayerEnterObject += PlayOneshoot;
+        InteractableObject.OnPlayerExitObject += PlayOneshoot;
 
     }
 
     private void OnDisable()
     {
         InteractableObject.OnCollisionMusic -= PlayPlayer;
-        InteractableObject.OnPlayNewMusic -=PlayOneshoot;
-        InteractableObject.OnExitCollisionMusic -=PlayOneshoot;
+        InteractableObject.OnPlayerEnterObject -=PlayOneshoot;
+        InteractableObject.OnPlayerExitObject -=PlayOneshoot;
     }
 
     private void PlayPlayer(AudioMixerGroup currentGroup, AudioClip currentAudioClip)

@@ -17,12 +17,12 @@ public class ChannelPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        InteractableObject.OnExitCollisionMusic += StopAudio;
+        InteractableObject.OnPlayerExitObject += StopAudio;
     }
 
     private void OnDisable()
     {
-        InteractableObject.OnExitCollisionMusic -= StopAudio;
+        InteractableObject.OnPlayerExitObject -= StopAudio;
     }
 
     public void PlayerClip(AudioClip clipToPlay)
